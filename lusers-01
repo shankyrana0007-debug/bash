@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Display Hello on screen using echo command
+echo 'Hello'
+
+# Assign a value to a variable
+WORD='script' 
+
+# Display that value using the variable
+echo "$WORD"
+
+# Demonstrate that single quotes cause variables to NOT get expanded
+echo '$WORD'
+
+# Combine the variable with hard-coded text
+echo "this is a shell $WORD"
+
+# Display the content of variable using an alternative syntax
+echo "This is a shell ${WORD}"
+
+# Append text to the variable
+echo "${WORD}ing is so much fun" # Working expample with braces ({})
+echo "$WORDing is so much fun" # Non working example without braces ({})
