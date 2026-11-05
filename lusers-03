@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# Display the UID and username of the user executing this script
+# Display if the user is the vagrant user or not
+
+#Display the UID
+echo "Your UID is ${UID}" # UID is builtin variable
+
+# Only display if the UID does not match 1000
+UID_TO_TEST_FOR='1000'
+if [[ "${UID}" != "${UID_TO_TEST_FOR}" ]]
+then 
+ echo "Your UID does not match ${UID_TO_TEST_FOR}"
+ exit 1
+fi
+
+#Display the username
+USER_NAME=$(whoami)
+echo "Your username is ${USER_NAME}"
+
+# Test if the command is succeeded
+if [[ "${?}" != 0 ]] # ${?} is a builtin variable which provides the output of previos command executed in the script
+then
+ echo "Your command is not executed successfully"
+else
+ echo "Your command is executed successfully"
+exit 
+fi
+
+# You can use a string test conditional
+USERNAME_TO_TEST_FOR='ubuntu'
+if [[ "${USER_NAME}" = "${USERNAME_TO_TEST_FOR}" ]]
+then
+ echo "Your username matches ${USERNAME_TO_TEST_FOR}"
+ exit 1
+fi
+
+# Test for != (not equal) for the string
+if [[ "${USER_NAME}" != "${USERNAME_TO_TEST_FOR}" ]]
+then
+ echo "Your username does not matches ${USERNAME_TO_TEST_FOR}"
+ exit 1
+fi

@@ -20,7 +20,7 @@ echo "This is a shell ${WORD}"
 
 # Append text to the variable
 echo "${WORD}ing is so much fun" # Working expample with braces ({})
-echo "$WORDing is so much fun" # Non working example without braces ({})
+#echo "$WORDing is so much fun" # Non working example without braces ({})
 
 #Create a new variable
 ENDING='ing'
